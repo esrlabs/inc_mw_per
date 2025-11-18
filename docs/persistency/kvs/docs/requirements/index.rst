@@ -12,6 +12,8 @@
    # SPDX-License-Identifier: Apache-2.0
    # *******************************************************************************
 
+.. _requirements:
+
 Requirements
 ############
 
@@ -392,3 +394,14 @@ Requirements
 
 .. needextend:: docname is not None and "persistency/kvs/requirements" in docname
    :+tags: persistencykvs
+
+
+Feature Requirements not yet covered
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- :need:`feat_req__persistency__cpp_rust_interop`
+- :need:`feat_req__persistency__tooling`
+- :need:`feat_req__persistency__variant_management`
+- :need:`feat_req__persistency__fast_access`
+- :need:`feat_req__persistency__maximum_size` *(currently unsupported)*
+
