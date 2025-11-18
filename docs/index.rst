@@ -12,14 +12,15 @@
    # SPDX-License-Identifier: Apache-2.0
    # *******************************************************************************
 
+.. toctree::
+   :maxdepth: 2
+
+   persistency/index
+
 Key-Value-Storage (rust_kvs) Documentation
 ==========================================
 
 This documentation describes the `rust_kvs` crate, which provides a key-value storage implementation with JSON-like persistence using Rust.
-
-.. contents:: Table of Contents
-   :depth: 2
-   :local:
 
 Summary
 -------
