@@ -290,14 +290,26 @@ class TestMalformedDefaultsFile(DefaultValuesScenario):
     def defaults_file(self, temp_dir: Path, defaults: str) -> Path | None:
         assert defaults in ("optional", "required")
 
+        # Path to expected defaults file.
+        # E.g., `/tmp/xyz/kvs_0_default.json`.
+        defaults_file_path = temp_dir / f"kvs_{self.instance_id()}_default.json"
+        # Path to expected defaults hash file.
+        # E.g., `/tmp/xyz/kvs_0_default.hash`.
+        defaults_hash_file_path = temp_dir / f"kvs_{self.instance_id()}_default.hash"
+
         # Create malformed JSON string by removing last characters.
         key = "test_number"
         value = 111.1
         json_str = create_defaults_json({key: ("f64", value)})[:-2]
 
-        defaults_file_path = temp_dir / f"kvs_{self.instance_id()}_default.json"
+        # Generate hash.
+        hash = adler32(json_str.encode()).to_bytes(length=4, byteorder="big")
+
+        # Save content and hash.
         with open(defaults_file_path, mode="w", encoding="UTF-8") as file:
             file.write(json_str)
+        with open(defaults_hash_file_path, mode="wb") as file:
+            file.write(hash)
 
         return defaults_file_path
 
