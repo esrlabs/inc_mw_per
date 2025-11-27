@@ -104,3 +104,21 @@ test_suite(
     tests = ["//src/cpp/tests:bm_kvs_cpp"],
     visibility = ["//visibility:public"],
 )
+
+test_suite(
+    name = "unit_tests",
+    tests = [
+        "test_kvs_cpp",
+        "//src/rust/rust_kvs:tests",
+    ],
+    visibility = ["//visibility:public"],
+)
+
+test_suite(
+    name = "cit_tests",
+    tests = [
+        "//tests/python_test_cases:cit_cpp",
+        "//tests/python_test_cases:cit_rust",
+    ],
+    visibility = ["//visibility:public"],
+)

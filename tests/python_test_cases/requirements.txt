@@ -1,4 +1,3 @@
-# Fully resolved list of dependencies is required by Bazel.
 psutil
 pytest-metadata
 pytest-env
