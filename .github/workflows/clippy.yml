@@ -10,28 +10,19 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 # *******************************************************************************
-load("@rules_rust//rust:defs.bzl", "rust_library", "rust_test")
-load("@score_persistency_crates//:defs.bzl", "all_crate_deps")
+name: Bazel Clippy
 
-rust_library(
-    name = "rust_kvs",
-    srcs = glob(["src/**/*.rs"]),
-    visibility = ["//visibility:public"],
-    deps = all_crate_deps(
-        normal = True,
-    ),
-)
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+  push:
+    branches:
+      - main
+  merge_group:
+    types: [checks_requested]
 
-rust_test(
-    name = "tests",
-    crate = "rust_kvs",
-    tags = [
-        "no-clippy",
-        "unit_tests",
-        "ut",
-    ],
-    deps = all_crate_deps(
-        normal = True,
-        normal_dev = True,
-    ),
-)
+jobs:
+  bazel-clippy:
+    uses: eclipse-score/cicd-workflows/.github/workflows/static-analysis.yml@main
+    with:
+      bazel-target: "build //:clippy"
