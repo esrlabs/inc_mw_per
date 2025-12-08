@@ -26,7 +26,6 @@ rust_test(
     name = "tests",
     crate = "rust_kvs",
     tags = [
-        "no-clippy",
         "unit_tests",
         "ut",
     ],
