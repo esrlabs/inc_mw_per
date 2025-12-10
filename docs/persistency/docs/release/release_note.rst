@@ -16,7 +16,7 @@ Release Note
 ============
 
 .. document:: Persistency Release Note
-   :id: doc__persistency_release_note
+   :id: doc__persistency_release_note_v2
    :status: valid
    :safety: ASIL_B
    :security: NO

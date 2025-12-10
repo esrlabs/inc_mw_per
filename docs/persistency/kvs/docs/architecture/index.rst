@@ -18,7 +18,7 @@ Architecture
 ============
 
 .. document:: Persistency KVS Module Architecture
-   :id: doc__persistency_kvs_architecture
+   :id: doc__persistency_kvs_architecture_v2
    :status: valid
    :safety: ASIL_B
    :security: NO
@@ -61,13 +61,13 @@ The components are designed to cover the expectations from the feature architect
 (i.e. if already exists a definition it should be taken over and enriched).
 
 .. comp_arc_sta:: Component Name (Static View)
-   :id: comp_arc_sta__persistency__static_view
+   :id: comp_arc_sta__persistency__static_view_v2
    :security: YES
    :safety: ASIL_B
    :status: invalid
    :implements:
    :fulfils:
-   :includes: comp_arc_sta__persistency__2
+   :includes: comp_arc_sta__persistency__2_v2
 
    .. needarch::
       :scale: 50
@@ -79,7 +79,7 @@ Dynamic Architecture
 --------------------
 
 .. comp_arc_dyn:: Dynamic View
-   :id: comp_arc_dyn__persistency__dynamic_view
+   :id: comp_arc_dyn__persistency__dynamic_view_v2
    :security: YES
    :safety: ASIL_B
    :status: invalid
@@ -104,7 +104,7 @@ Lower Level Components
 ----------------------
 
 .. comp_arc_sta:: Component Name 2
-   :id: comp_arc_sta__persistency__2
+   :id: comp_arc_sta__persistency__2_v2
    :status: invalid
    :safety: ASIL_B
    :security: YES

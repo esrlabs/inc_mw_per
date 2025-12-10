@@ -91,10 +91,10 @@ class DefaultValuesScenario(CommonScenario):
 
 @pytest.mark.PartiallyVerifies(
     [
-        "comp_req__persistency__value_default",
-        "comp_req__persistency__default_value_config",
-        "comp_req__persistency__default_value_types",
-        "comp_req__persistency__default_value_query",
+        "comp_req__persistency__value_default_v2",
+        "comp_req__persistency__default_value_cfg_v2",
+        "comp_req__persistency__default_value_types_v2",
+        "comp_req__persistency__default_value_query_v2",
     ]
 )
 @pytest.mark.FullyVerifies([])
@@ -170,9 +170,9 @@ class TestDefaultValues(DefaultValuesScenario):
 
 @pytest.mark.PartiallyVerifies(
     [
-        "comp_req__persistency__value_default",
-        "comp_req__persistency__default_value_config",
-        "comp_req__persistency__default_value_types",
+        "comp_req__persistency__value_default_v2",
+        "comp_req__persistency__default_value_cfg_v2",
+        "comp_req__persistency__default_value_types_v2",
     ]
 )
 @pytest.mark.FullyVerifies([])
@@ -256,9 +256,9 @@ class TestRemoveKey(DefaultValuesScenario):
 
 @pytest.mark.PartiallyVerifies(
     [
-        "comp_req__persistency__value_default",
-        "comp_req__persistency__default_value_config",
-        "comp_req__persistency__default_value_types",
+        "comp_req__persistency__value_default_v2",
+        "comp_req__persistency__default_value_cfg_v2",
+        "comp_req__persistency__default_value_types_v2",
     ]
 )
 @pytest.mark.FullyVerifies([])
@@ -315,9 +315,9 @@ class TestMalformedDefaultsFile(DefaultValuesScenario):
 
 @pytest.mark.PartiallyVerifies(
     [
-        "comp_req__persistency__value_default",
-        "comp_req__persistency__default_value_config",
-        "comp_req__persistency__default_value_types",
+        "comp_req__persistency__value_default_v2",
+        "comp_req__persistency__default_value_cfg_v2",
+        "comp_req__persistency__default_value_types_v2",
     ]
 )
 @pytest.mark.FullyVerifies([])
@@ -354,12 +354,12 @@ class TestMissingDefaultsFile(DefaultValuesScenario):
 
 @pytest.mark.PartiallyVerifies(
     [
-        "comp_req__persistency__value_default",
-        "comp_req__persistency__default_value_config",
-        "comp_req__persistency__default_value_types",
+        "comp_req__persistency__value_default_v2",
+        "comp_req__persistency__default_value_cfg_v2",
+        "comp_req__persistency__default_value_types_v2",
     ]
 )
-@pytest.mark.FullyVerifies(["comp_req__persistency__value_reset"])
+@pytest.mark.FullyVerifies(["comp_req__persistency__value_reset_v2"])
 @pytest.mark.Description(
     "Checks that resetting KVS restores all keys to their default values."
 )
@@ -420,8 +420,8 @@ class TestResetAllKeys(DefaultValuesScenario):
 
 @pytest.mark.PartiallyVerifies(
     [
-        "comp_req__persistency__value_default",
-        "comp_req__persistency__default_value_config",
+        "comp_req__persistency__value_default_v2",
+        "comp_req__persistency__default_value_cfg_v2",
     ]
 )
 @pytest.mark.FullyVerifies([])
@@ -500,11 +500,11 @@ class TestResetSingleKey(DefaultValuesScenario):
 
 @pytest.mark.PartiallyVerifies(
     [
-        "comp_req__persistency__value_default",
-        "comp_req__persistency__default_value_config",
+        "comp_req__persistency__value_default_v2",
+        "comp_req__persistency__default_value_cfg_v2",
     ]
 )
-@pytest.mark.FullyVerifies(["comp_req__persistency__default_value_checksum"])
+@pytest.mark.FullyVerifies(["comp_req__persistency__default_val_chksum_v2"])
 @pytest.mark.Description(
     "Ensures that a checksum file is created when opening KVS with defaults."
 )

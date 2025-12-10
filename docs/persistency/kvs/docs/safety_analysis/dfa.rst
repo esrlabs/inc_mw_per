@@ -17,7 +17,7 @@ Dependent Failure Analysis
 ==========================
 
 .. document:: KVS DFA
-   :id: doc__persistency_kvs_dfa
+   :id: doc__persistency_kvs_dfa_v2
    :status: valid
    :safety: ASIL_B
    :security: NO

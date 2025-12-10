@@ -16,7 +16,7 @@ Module Safety Plan
 ******************
 
 .. document:: Persistency Safety Plan
-   :id: doc__persistency_safety_plan
+   :id: doc__persistency_safety_plan_v2
    :status: valid
    :safety: ASIL_B
    :security: NO
@@ -87,22 +87,22 @@ Module Workproducts List
           - :need:`gd_chklst__safety_plan`
           - :ndf:`copy('status', need_id='gd_chklst__safety_plan')`
           - https://github.com/eclipse-score/score/issues/952?issue=eclipse-score%7Cscore%7C963
-          - :need:`doc__persistency_safety_plan_fdr`
-          - :ndf:`copy('status', need_id='doc__persistency_safety_plan_fdr')`
+          - :need:`doc__persistency_safety_plan_v2_fdr_v2`
+          - :ndf:`copy('status', need_id='doc__persistency_safety_plan_v2_fdr_v2')`
 
         * - :need:`wp__fdr_reports` (module Safety Package)
           - :need:`gd_chklst__safety_package`
           - :ndf:`copy('status', need_id='gd_chklst__safety_package')`
           - https://github.com/eclipse-score/score/issues/952?issue=eclipse-score%7Cscore%7C963
-          - :need:`doc__persistency_safety_package_fdr`
-          - :ndf:`copy('status', need_id='doc__persistency_safety_package_fdr')`
+          - :need:`doc__persistency_safety_package_fdr_v2`
+          - :ndf:`copy('status', need_id='doc__persistency_safety_package_fdr_v2')`
 
         * - :need:`wp__fdr_reports` (module's Safety Analyses & DFA)
           - :need:`gd_guidl__safety_analysis`
           - :ndf:`copy('status', need_id='gd_guidl__safety_analysis')`
           - https://github.com/eclipse-score/score/issues/952?issue=eclipse-score%7Cscore%7C965
-          - :need:`doc__persistency_kvs_fmea`
-          - :ndf:`copy('status', need_id='doc__persistency_kvs_fmea')`
+          - :need:`doc__persistency_kvs_fmea_v2`
+          - :ndf:`copy('status', need_id='doc__persistency_kvs_fmea_v2')`
 
         * - :need:`wp__audit_report`
           - performed by external experts
@@ -122,22 +122,22 @@ Module Workproducts List
           - :need:`gd_temp__safety_manual`
           - :ndf:`copy('status', need_id='gd_temp__safety_manual')`
           - https://github.com/eclipse-score/score/issues/952?issue=eclipse-score%7Cscore%7C963
-          - :need:`doc__persistency_safety_manual`
-          - :ndf:`copy('status', need_id='doc__persistency_safety_manual')`
+          - :need:`doc__persistency_safety_manual_v2`
+          - :ndf:`copy('status', need_id='doc__persistency_safety_manual_v2')`
 
         * - :need:`wp__verification_module_ver_report`
           - :need:`gd_temp__mod_ver_report`
           - :ndf:`copy('status', need_id='gd_temp__mod_ver_report')`
           - https://github.com/eclipse-score/score/issues/952?issue=eclipse-score%7Cscore%7C964
-          - :need:`doc__persistency_verification_report`
-          - :ndf:`copy('status', need_id='doc__persistency_verification_report')`
+          - :need:`doc__persistency_verification_report_v2`
+          - :ndf:`copy('status', need_id='doc__persistency_verification_report_v2')`
 
         * - :need:`wp__module_sw_release_note`
           - :need:`gd_temp__rel_mod_rel_note`
           - :ndf:`copy('status', need_id='gd_temp__rel_mod_rel_note')`
           - <Link to issue>
-          - :need:`doc__persistency_release_note`
-          - :ndf:`copy('status', need_id='doc__persistency_release_note')`
+          - :need:`doc__persistency_release_note_v2`
+          - :ndf:`copy('status', need_id='doc__persistency_release_note_v2')`
 
 Component <name> Workproducts List
 ----------------------------------
@@ -156,15 +156,15 @@ Component <name> Workproducts List
           - :need:`gd_temp__req_comp_req`
           - :ndf:`copy('status', need_id='gd_temp__req_comp_req')`
           - https://github.com/eclipse-score/score/issues/952?issue=eclipse-score%7Cscore%7C960
-          - :need:`doc__persistency_kvs_requirements`
-          - :ndf:`copy('status', need_id='doc__persistency_kvs_requirements')` & WP below
+          - :need:`doc__persistency_kvs_requirements_v2`
+          - :ndf:`copy('status', need_id='doc__persistency_kvs_requirements_v2')` & WP below
 
         * - :need:`wp__requirements_comp_aou`
           - :need:`gd_temp__req_aou_req`
           - :ndf:`copy('status', need_id='gd_temp__req_aou_req')`
           - https://github.com/eclipse-score/score/issues/952?issue=eclipse-score%7Cscore%7C960
-          - :need:`doc__persistency_kvs_requirements`
-          - :ndf:`copy('status', need_id='doc__persistency_kvs_requirements')` & WP below
+          - :need:`doc__persistency_kvs_requirements_v2`
+          - :ndf:`copy('status', need_id='doc__persistency_kvs_requirements_v2')` & WP below
 
         * - :need:`wp__requirements_inspect`
           - :need:`gd_chklst__req_inspection`
@@ -177,8 +177,8 @@ Component <name> Workproducts List
           - :need:`gd_temp__arch_comp`
           - :ndf:`copy('status', need_id='gd_temp__arch_comp')`
           - https://github.com/eclipse-score/score/issues/952?issue=eclipse-score%7Cscore%7C1020
-          - :need:`doc__persistency_kvs_architecture`
-          - :ndf:`copy('status', need_id='doc__persistency_kvs_architecture')` & WP below
+          - :need:`doc__persistency_kvs_architecture_v2`
+          - :ndf:`copy('status', need_id='doc__persistency_kvs_architecture_v2')` & WP below
 
         * - :need:`wp__sw_arch_verification`
           - :need:`gd_chklst__arch_inspection_checklist`
@@ -191,15 +191,15 @@ Component <name> Workproducts List
           - :need:`wp__sw_component_fmea`
           - :ndf:`copy('status', need_id='gd_guidl__safety_analysis')`
           - https://github.com/eclipse-score/score/issues/952?issue=eclipse-score%7Cscore%7C965
-          - :need:`doc__persistency_kvs_fmea`
-          - :ndf:`copy('status', need_id='doc__persistency_kvs_fmea')` & WP below
+          - :need:`doc__persistency_kvs_fmea_v2`
+          - :ndf:`copy('status', need_id='doc__persistency_kvs_fmea_v2')` & WP below
 
         * - :need:`wp__sw_component_dfa`
           - :need:`wp__sw_component_dfa`
           - :ndf:`copy('status', need_id='gd_guidl__safety_analysis')`
           - https://github.com/eclipse-score/score/issues/952?issue=eclipse-score%7Cscore%7C965
-          - :need:`doc__persistency_kvs_dfa`
-          - :ndf:`copy('status', need_id='doc__persistency_kvs_dfa')` & WP below
+          - :need:`doc__persistency_kvs_dfa_v2`
+          - :ndf:`copy('status', need_id='doc__persistency_kvs_dfa_v2')` & WP below
 
         * - :need:`wp__sw_implementation`
           - :need:`gd_guidl__implementation`
@@ -233,8 +233,8 @@ Component <name> Workproducts List
           - :need:`gd_guidl__component_classification`
           - :ndf:`copy('status', need_id='gd_guidl__component_classification')`
           - https://github.com/eclipse-score/score/issues/952?issue=eclipse-score%7Cscore%7C963
-          - :need:`doc__persistency_component_classification`
-          - :ndf:`copy('status', need_id='doc__persistency_component_classification')`
+          - :need:`doc__persistency_component_classification_v2`
+          - :ndf:`copy('status', need_id='doc__persistency_component_classification_v2')`
 
 Note: In case the component is a new development, :need:`wp__sw_component_class` shall be removed from the above list (and also from the folders).
 In case an OSS element is used in the module, part 6 has to be filled out.
@@ -318,7 +318,7 @@ Component AoU Status
 --------------------
 
 .. needtable::
-   :filter: "persistency" in docname and "requirements" in docname and docname is not None
+   :filter: docname is not None and "persistency" in docname and "requirements" in docname
    :style: table
    :types: aou_req
    :tags: persistencykvs

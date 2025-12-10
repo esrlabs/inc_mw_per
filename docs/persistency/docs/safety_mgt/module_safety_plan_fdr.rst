@@ -16,7 +16,7 @@ Safety Plan Formal Review Report
 ================================
 
 .. document:: Persistency Safety Plan Formal Review
-   :id: doc__persistency_safety_plan_fdr
+   :id: doc__persistency_safety_plan_v2_fdr_v2
    :status: valid
    :safety: ASIL_B
    :security: NO

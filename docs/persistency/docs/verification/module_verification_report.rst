@@ -16,7 +16,7 @@ Verification Report
 ===================
 
 .. document:: Persistency Verification Report
-   :id: doc__persistency_verification_report
+   :id: doc__persistency_verification_report_v2
    :status: valid
    :safety: ASIL_B
    :security: NO

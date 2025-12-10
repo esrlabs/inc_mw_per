@@ -16,7 +16,7 @@ Component Classification
 ========================
 
 .. document:: Persistency Component Classification
-   :id: doc__persistency_component_classification
+   :id: doc__persistency_component_classification_v2
    :status: valid
    :safety: ASIL_B
    :security: NO

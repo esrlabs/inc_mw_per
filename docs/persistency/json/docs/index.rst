@@ -23,7 +23,7 @@ Tiny JSON
 #########
 
 .. document:: Persistency JSON
-   :id: doc__persistencyjson
+   :id: doc__persistencyjson_v2
    :status: valid
    :safety: ASIL_B
    :security: NO

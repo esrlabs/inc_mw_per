@@ -18,14 +18,14 @@ Requirements
 ############
 
 .. document:: Persistency KVS Module Requirements
-   :id: doc__persistency_kvs_requirements
+   :id: doc__persistency_kvs_requirements_v2
    :status: valid
    :safety: ASIL_B
    :security: NO
    :realizes: wp__requirements_comp
 
 .. comp_req:: Key Naming
-   :id: comp_req__persistency__key_naming
+   :id: comp_req__persistency__key_naming_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -35,7 +35,7 @@ Requirements
    The component shall accept keys that consist solely of alphanumeric characters, underscores, or dashes.
 
 .. comp_req:: Key Encoding
-   :id: comp_req__persistency__key_encoding
+   :id: comp_req__persistency__key_encoding_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -45,7 +45,7 @@ Requirements
    The component shall encode each key as valid UTF-8.
 
 .. comp_req:: Key Uniqueness
-   :id: comp_req__persistency__key_uniqueness
+   :id: comp_req__persistency__key_uniqueness_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -55,7 +55,7 @@ Requirements
    The component shall guarantee that each key is unique.
 
 .. comp_req:: Key Length
-   :id: comp_req__persistency__key_length
+   :id: comp_req__persistency__key_length_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -65,7 +65,7 @@ Requirements
    The component shall limit the maximum length of a key to 32 bytes.
 
 .. comp_req:: Value Data Types
-   :id: comp_req__persistency__value_data_types
+   :id: comp_req__persistency__value_data_types_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -76,7 +76,7 @@ Requirements
    String, Null, Array[Value], or Dictionary{Key:Value}.
 
 .. comp_req:: Value Serialization
-   :id: comp_req__persistency__value_serialize
+   :id: comp_req__persistency__value_serialize_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -86,7 +86,7 @@ Requirements
    The component shall serialize and deserialize all values to and from JSON.
 
 .. comp_req:: Value Length
-   :id: comp_req__persistency__value_length
+   :id: comp_req__persistency__value_length_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -96,7 +96,7 @@ Requirements
    The component shall limit the maximum length of a value to 1024 bytes.
 
 .. comp_req:: Value Default
-   :id: comp_req__persistency__value_default
+   :id: comp_req__persistency__value_default_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -107,7 +107,7 @@ Requirements
    when a value is unset.
 
 .. comp_req:: Value Reset
-   :id: comp_req__persistency__value_reset
+   :id: comp_req__persistency__value_reset_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -118,7 +118,7 @@ Requirements
    defined.
 
 .. comp_req:: Default Value Datatypes
-   :id: comp_req__persistency__default_value_types
+   :id: comp_req__persistency__default_value_types_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -129,7 +129,7 @@ Requirements
    types.
 
 .. comp_req:: Default Value Query
-   :id: comp_req__persistency__default_value_query
+   :id: comp_req__persistency__default_value_query_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -139,7 +139,7 @@ Requirements
    The component shall provide an API to retrieve default values.
 
 .. comp_req:: Default Value Config
-   :id: comp_req__persistency__default_value_config
+   :id: comp_req__persistency__default_value_cfg_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -150,7 +150,7 @@ Requirements
    separate configuration file.
 
 .. comp_req:: Default Value Checksum
-   :id: comp_req__persistency__default_value_checksum
+   :id: comp_req__persistency__default_val_chksum_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -161,7 +161,7 @@ Requirements
    associated checksum file when default values are stored in a file.
 
 .. comp_req:: Constraint Configuration
-   :id: comp_req__persistency__constraints
+   :id: comp_req__persistency__constraints_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -172,7 +172,7 @@ Requirements
    using source code constants or at runtime using a configuration file.
 
 .. comp_req:: Concurrency
-   :id: comp_req__persistency__concurrency
+   :id: comp_req__persistency__concurrency_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -183,7 +183,7 @@ Requirements
    access to data without data races.
 
 .. comp_req:: Multi-Instance
-   :id: comp_req__persistency__multi_instance
+   :id: comp_req__persistency__multi_instance_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -195,7 +195,7 @@ Requirements
    single software architecture element.
 
 .. comp_req:: Persistent Data Storage Components
-   :id: comp_req__persistency__persist_data_store_com
+   :id: comp_req__persistency__persist_data_com_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -205,7 +205,7 @@ Requirements
    The component shall use the file API and the JSON data format to persist data.
 
 .. comp_req:: Persistent Data Storage Checksum Write
-   :id: comp_req__persistency__pers_data_csum_write
+   :id: comp_req__persistency__pers_data_csum_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -216,7 +216,7 @@ Requirements
    it alongside the data.
 
 .. comp_req:: Persistent Data Storage Checksum Verify
-   :id: comp_req__persistency__pers_data_csum_verify
+   :id: comp_req__persistency__pers_data_csum_vrfy_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -226,7 +226,7 @@ Requirements
    The component shall verify the checksum when loading data.
 
 .. comp_req:: Persistent Data Storage Backend
-   :id: comp_req__persistency__pers_data_store_bend
+   :id: comp_req__persistency__pers_data_store_bnd_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -236,7 +236,7 @@ Requirements
    The component shall use the file API to persist data.
 
 .. comp_req:: Persistent Data Storage Format
-   :id: comp_req__persistency__pers_data_store_fmt
+   :id: comp_req__persistency__pers_data_store_fmt_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -246,7 +246,7 @@ Requirements
    The component shall use the JSON data format to persist data.
 
 .. comp_req:: Persistent Data Versioning
-   :id: comp_req__persistency__pers_data_version
+   :id: comp_req__persistency__pers_data_version_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -256,7 +256,7 @@ Requirements
    The component shall not provide built-in versioning.
 
 .. comp_req:: Persistent Data Schema
-   :id: comp_req__persistency__pers_data_schema
+   :id: comp_req__persistency__pers_data_schema_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -268,7 +268,7 @@ Requirements
    as needed.
 
 .. comp_req:: Snapshot Creation
-   :id: comp_req__persistency__snapshot_creation
+   :id: comp_req__persistency__snapshot_creation_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -278,7 +278,7 @@ Requirements
    The component shall create a snapshot each time data is stored.
 
 .. comp_req:: Snapshot Maximum Number
-   :id: comp_req__persistency__snapshot_max_num
+   :id: comp_req__persistency__snapshot_max_num_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -288,7 +288,7 @@ Requirements
    The component shall maintain a configurable maximum number of snapshots.
 
 .. comp_req:: Snapshot IDs
-   :id: comp_req__persistency__snapshot_id
+   :id: comp_req__persistency__snapshot_id_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -298,7 +298,7 @@ Requirements
    The component shall assign the ID 1 to the newest snapshot and shall increment the IDs of older snapshots accordingly.
 
 .. comp_req:: Snapshot Rotation
-   :id: comp_req__persistency__snapshot_rotate
+   :id: comp_req__persistency__snapshot_rotate_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -308,7 +308,7 @@ Requirements
    The component shall rotate and delete the oldest snapshot when the maximum number is reached.
 
 .. comp_req:: Snapshot Restore
-   :id: comp_req__persistency__snapshot_restore
+   :id: comp_req__persistency__snapshot_restore_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -318,7 +318,7 @@ Requirements
    The component shall allow restoration of a snapshot by its ID.
 
 .. comp_req:: Snapshot Deletion
-   :id: comp_req__persistency__snapshot_delete
+   :id: comp_req__persistency__snapshot_delete_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -328,7 +328,7 @@ Requirements
    The component shall allow deletion of individual snapshots.
 
 .. comp_req:: Engineering Mode
-   :id: comp_req__persistency__eng_mode
+   :id: comp_req__persistency__eng_mode_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -339,7 +339,7 @@ Requirements
    build time to display debugging and internal information.
 
 .. comp_req:: Field Mode
-   :id: comp_req__persistency__field_mode
+   :id: comp_req__persistency__field_mode_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -350,7 +350,7 @@ Requirements
    time to restrict access as much as possible.
 
 .. comp_req:: Async API
-   :id: comp_req__persistency__async_api
+   :id: comp_req__persistency__async_api_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -360,7 +360,7 @@ Requirements
    The component shall provide an asynchronous API in addition to the standard API.
 
 .. comp_req:: Permission Control
-   :id: comp_req__persistency__permission_control
+   :id: comp_req__persistency__permission_control_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -372,7 +372,7 @@ Requirements
    controls.
 
 .. comp_req:: Permission Error Handling
-   :id: comp_req__persistency__permission_err_handle
+   :id: comp_req__persistency__permission_err_hndl_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
@@ -383,7 +383,7 @@ Requirements
    the filesystem level to the application.
 
 .. comp_req:: Callback Support
-   :id: comp_req__persistency__callback_support
+   :id: comp_req__persistency__callback_support_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B

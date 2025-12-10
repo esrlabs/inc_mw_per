@@ -17,7 +17,7 @@ Safety Analysis: FMEA
 ======================
 
 .. document:: KVS FMEA
-   :id: doc__persistency_kvs_fmea
+   :id: doc__persistency_kvs_fmea_v2
    :status: valid
    :safety: ASIL_B
    :security: NO

@@ -18,7 +18,7 @@ KVS (Key Value Store)
 #####################
 
 .. document:: Persistency KVS
-   :id: doc__persistencykvs
+   :id: doc__persistencykvs_v2
    :status: valid
    :safety: ASIL_B
    :security: NO
@@ -77,10 +77,6 @@ Specification
 [Describe the requirements, architecture of any new component.] or
 [Describe the change to requirements, architecture, implementation, documentation of any change request.]
 
-   .. note::
-      A CR shall specify the component requirements as part of our platform/project.
-      Thereby the :need:`rl__module_lead` will approve these requirements as part of accepting the CR (e.g. merging the PR with the CR).
-
 
 Backwards Compatibility
 =======================
@@ -115,7 +111,7 @@ We use an iterative development process and apply results from the next steps
 back to the feature request. For TinyJSON we will perform a software component
 classification.
 
-:need:`doc__persistency_component_classification`
+:need:`doc__persistency_component_classification_v2`
 
 To ensure the freedom of interference the feature key-value storage should not
 be used within different processes.

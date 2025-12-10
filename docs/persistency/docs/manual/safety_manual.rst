@@ -16,7 +16,7 @@ Safety Manual
 =============
 
 .. document:: Persistency Safety Manual
-   :id: doc__persistency_safety_manual
+   :id: doc__persistency_safety_manual_v2
    :status: valid
    :safety: ASIL_B
    :security: NO
