@@ -12,7 +12,8 @@
  ********************************************************************************/
 
 #include "cit/cit.hpp"
+#include "cit/test_default_values.hpp"
 
 ScenarioGroup::Ptr cit_scenario_group() {
-    return ScenarioGroup::Ptr{new ScenarioGroupImpl{"cit", {}, {}}};
+    return ScenarioGroup::Ptr{new ScenarioGroupImpl{"cit", {}, {create_default_values_group()}}};
 }

@@ -23,6 +23,7 @@
 #include "test_basic.hpp"
 
 int main(int argc, char** argv) {
+    using namespace test_default_values;
     try {
         std::vector<std::string> raw_arguments{argv, argv + argc};
 
