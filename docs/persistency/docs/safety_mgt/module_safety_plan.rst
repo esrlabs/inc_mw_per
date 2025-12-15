@@ -244,21 +244,24 @@ Module Safety Package
 To create the safety package (according to :need:`gd_guidl__saf_package`) the following
 documents and work products status have to go to "valid" (after the relevant verification were performed).
 
-Module Documents Status
------------------------
+.. needtable::
+   :style: table
+   :columns: title;id;safety;security;status
+   :colwidths: 25,45,10,10,10
+   :sort: id
 
-For all the work product documents the status can be seen by following the "Link to WP".
-A summary of the status is also documented in the project's documentation management plan.
-
-See :ref:`documents_docs_modules_persistency_docs`
+   results = []
+   for need in needs.filter_types(["document"]):
+       if need["is_external"]:  # ignore external documents
+           continue
+       if need["safety"] == "QM":  # ignore non-safety-critical documents
+           continue
+       results.append(need)
 
 Component Documents Status
 --------------------------
 
-For all the work product documents the status can be seen by following the "Link to WP".
-A summary of the status is also documented in the project's documentation management plan.
-
-See :ref:`documents_docs_modules_persistency_components`
+For all the work product documents the status can be seen above in the module section.
 
 Component Requirements Status
 -----------------------------
