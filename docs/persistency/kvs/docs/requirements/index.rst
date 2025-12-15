@@ -23,7 +23,7 @@ Requirements
    :realizes: wp__requirements_comp
 
 .. comp_req:: Key Naming
-   :id: comp_req__persistency__key_naming
+   :id: comp_req__persistency__key_naming_v2
    :reqtype: Functional
    :security: NO
    :safety: ASIL_B
