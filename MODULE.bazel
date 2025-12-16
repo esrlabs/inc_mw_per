@@ -33,7 +33,7 @@ pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip", dev_depen
 pip.parse(
     hub_name = "pip_score_venv_test",
     python_version = PYTHON_VERSION,
-    requirements_lock = "//tests/python_test_cases:requirements.txt",
+    requirements_lock = "//tests/python_test_cases:requirements.txt.lock",
 )
 use_repo(pip, "pip_score_venv_test")
 
@@ -63,10 +63,18 @@ gcc.toolchain(
 )
 use_repo(gcc, "gcc_toolchain", "gcc_toolchain_gcc")
 
-register_toolchains(
-    "@gcc_toolchain//:all",
-    dev_dependency = True,
+# score qnx (qcc) toolchain.
+bazel_dep(name = "score_toolchains_qnx", version = "0.0.5", dev_dependency = True)
+
+toolchains_qnx = use_extension("@score_toolchains_qnx//:extensions.bzl", "toolchains_qnx", dev_dependency = True)
+toolchains_qnx.sdp(
+    sha256 = "f2e0cb21c6baddbcb65f6a70610ce498e7685de8ea2e0f1648f01b327f6bac63",
+    strip_prefix = "installation",
+    url = "https://www.qnx.com/download/download/79858/installation.tgz",
 )
+use_repo(toolchains_qnx, "toolchains_qnx_sdp")
+use_repo(toolchains_qnx, "toolchains_qnx_qcc")
+use_repo(toolchains_qnx, "toolchains_qnx_ifs")
 
 ## Bazel registry
 # Module dependencies
@@ -74,7 +82,21 @@ bazel_dep(name = "googletest", version = "1.17.0.bcr.1")
 
 bazel_dep(name = "google_benchmark", version = "1.9.4", dev_dependency = True)
 
+bazel_dep(name = "platforms", version = "1.0.0")
+
 ## S-CORE bazel registry
+bazel_dep(name = "score_baselibs", version = "0.1.2")
+bazel_dep(name = "score_bazel_platforms", version = "0.0.2")
+bazel_dep(name = "score_docs_as_code", version = "2.2.0")
+bazel_dep(name = "score_platform", version = "0.5.0")
+git_override(
+    module_name = "score_platform",
+    commit = "9d30b718db22ad335cccbcfd72f96e5b37fa58f1",  # obsolete by 0.5.1+
+    remote = "https://github.com/eclipse-score/score.git",
+)
+
+bazel_dep(name = "score_process", version = "1.3.2")
+bazel_dep(name = "score_python_basics", version = "0.3.4")
 bazel_dep(name = "score_tooling", version = "1.0.3")
 
 # ToDo: remove this once 1.0.4 is released,
@@ -88,24 +110,6 @@ git_override(
 # ToDo: implicit dependencies for score_tooling, but needed directly here??
 bazel_dep(name = "aspect_rules_lint", version = "1.10.2")
 bazel_dep(name = "buildifier_prebuilt", version = "8.2.0.2")
-
-# docs-as-code
-bazel_dep(name = "score_docs_as_code", version = "2.2.0")
-
-# Provides, pytest & venv
-bazel_dep(name = "score_python_basics", version = "0.3.4")
-bazel_dep(name = "score_platform")
-git_override(
-    # obsolete by 0.5.1+
-    module_name = "score_platform",
-    commit = "9d30b718db22ad335cccbcfd72f96e5b37fa58f1",
-    remote = "https://github.com/eclipse-score/score.git",
-)
-
-bazel_dep(name = "score_process", version = "1.3.2")
-
-# Module deps
-bazel_dep(name = "score_baselibs", version = "0.1.2")
 
 ## additional settings / config
 crate = use_extension("@rules_rust//crate_universe:extensions.bzl", "crate")
@@ -156,23 +160,6 @@ git_override(
     remote = "https://github.com/eclipse-score/toolchains_rust.git",
 )
 
-bazel_dep(name = "score_toolchains_qnx", version = "0.1", dev_dependency = True)
-git_override(
-    module_name = "score_toolchains_qnx",
-    commit = "cdaa451c994f5e1f88aa6395dd516586f387d0ec",
-    remote = "https://github.com/eclipse-score/toolchains_qnx.git",
-)
-
-toolchains_qnx = use_extension("@score_toolchains_qnx//:extensions.bzl", "toolchains_qnx", dev_dependency = True)
-toolchains_qnx.sdp(
-    sha256 = "f2e0cb21c6baddbcb65f6a70610ce498e7685de8ea2e0f1648f01b327f6bac63",
-    strip_prefix = "installation",
-    url = "https://www.qnx.com/download/download/79858/installation.tgz",
-)
-use_repo(toolchains_qnx, "toolchains_qnx_sdp")
-use_repo(toolchains_qnx, "toolchains_qnx_qcc")
-use_repo(toolchains_qnx, "toolchains_qnx_ifs")
-
 bazel_dep(name = "custom_qemu", version = "1.0.0", dev_dependency = True)
 archive_override(
     module_name = "custom_qemu",
@@ -183,17 +170,8 @@ archive_override(
     ],
 )
 
-bazel_dep(name = "platforms", version = "1.0.0")
-
 # Registers the custom Rust toolchain wired to @qnx_rust
 register_toolchains(
-    "@toolchains_qnx_qcc//:qcc_aarch64",
     "@score_toolchains_rust//toolchains/aarch64-unknown-qnx8_0:toolchain_aarch64_qnx8_0",
-    dev_dependency = True,
-)
-
-register_toolchains(
-    "@toolchains_qnx_ifs//:ifs_x86_64",
-    "@toolchains_qnx_ifs//:ifs_aarch64",
     dev_dependency = True,
 )
