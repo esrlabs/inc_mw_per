@@ -11,7 +11,6 @@
 # SPDX-License-Identifier: Apache-2.0
 # *******************************************************************************
 load("@rules_rust//rust:defs.bzl", "rust_binary")
-load("@score_persistency_crates//:defs.bzl", "all_crate_deps")
 
 rust_binary(
     name = "kvs_tool",
@@ -20,9 +19,9 @@ rust_binary(
     ],
     crate_name = "rust_kvs_tool",
     visibility = ["//visibility:public"],
-    deps = all_crate_deps(
-        normal = True,
-    ) + [
+    deps = [
         "//src/rust/rust_kvs",
+        "@score_crates//:pico_args",
+        "@score_crates//:tinyjson",
     ],
 )

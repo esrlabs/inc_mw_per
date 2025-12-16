@@ -48,7 +48,6 @@ score_py_pytest(
     data = [
         ":python_tc_venv",
         "//tests/cpp_test_scenarios",
-        "//tests/rust_test_scenarios",
     ],
     env = {
         "RUST_BACKTRACE": "1",
@@ -66,7 +65,6 @@ score_py_pytest(
     ],
     data = [
         ":python_tc_venv",
-        "//tests/cpp_test_scenarios",
         "//tests/rust_test_scenarios",
     ],
     env = {
