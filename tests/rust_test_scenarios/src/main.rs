@@ -14,7 +14,10 @@ use tracing_subscriber::FmtSubscriber;
 struct NumericUnixTime;
 
 impl FormatTime for NumericUnixTime {
-    fn format_time(&self, w: &mut tracing_subscriber::fmt::format::Writer<'_>) -> std::fmt::Result {
+    fn format_time(
+        &self,
+        w: &mut tracing_subscriber::fmt::format::Writer<'_>,
+    ) -> core::fmt::Result {
         let now = SystemTime::now()
             .duration_since(UNIX_EPOCH)
             .unwrap_or_default();
