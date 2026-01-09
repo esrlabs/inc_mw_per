@@ -145,7 +145,7 @@ class TestDefaultValues(DefaultValuesScenario):
     ) -> None:
         if version == "cpp":
             pytest.xfail(
-                reason="Known bug in CPP code : https://github.com/eclipse-score/persistency/issues/182",
+                reason="https://github.com/eclipse-score/persistency/issues/182"
             )
 
         assert results.return_code == ResultCode.SUCCESS
@@ -229,7 +229,7 @@ class TestRemoveKey(DefaultValuesScenario):
     ) -> None:
         if version == "cpp":
             pytest.xfail(
-                reason="Known bug in CPP code : https://github.com/eclipse-score/persistency/issues/182",
+                reason="https://github.com/eclipse-score/persistency/issues/182"
             )
         assert results.return_code == ResultCode.SUCCESS
 
@@ -328,14 +328,9 @@ class TestMalformedDefaultsFile(DefaultValuesScenario):
         self,
         defaults_file: Path | None,
         results: ScenarioResult,
-        version: str,
     ) -> None:
         assert defaults_file is not None
-        if version == "cpp":
-            assert results.return_code == ResultCode.SIGABRT
-        else:
-            assert results.return_code == ResultCode.PANIC
-
+        assert results.return_code == ResultCode.PANIC
         assert results.stderr is not None
         pattern = r'error: file ".*" could not be read: JsonParserError'
         assert re.findall(pattern, results.stderr) is not None
@@ -373,12 +368,8 @@ class TestMissingDefaultsFile(DefaultValuesScenario):
             }
         }
 
-    # Sigabt when the proper error codes in case of default file is not found
-    def test_invalid(self, results: ScenarioResult, version: str) -> None:
-        if version == "cpp":
-            assert results.return_code == ResultCode.SIGABRT
-        else:
-            assert results.return_code == ResultCode.PANIC
+    def test_invalid(self, results: ScenarioResult) -> None:
+        assert results.return_code == ResultCode.PANIC
         assert results.stderr is not None
         pattern = r'error: file ".*" could not be read: KvsFileReadError'
         assert re.findall(pattern, results.stderr) is not None
@@ -434,7 +425,7 @@ class TestResetAllKeys(DefaultValuesScenario):
     ):
         if version == "cpp":
             pytest.xfail(
-                reason="Known bug in CPP code : https://github.com/eclipse-score/persistency/issues/182",
+                reason="https://github.com/eclipse-score/persistency/issues/182"
             )
         assert defaults_file is not None
         assert results.return_code == ResultCode.SUCCESS
@@ -505,7 +496,7 @@ class TestResetSingleKey(DefaultValuesScenario):
     ):
         if version == "cpp":
             pytest.xfail(
-                reason="Known bug in CPP code : https://github.com/eclipse-score/persistency/issues/182",
+                reason="https://github.com/eclipse-score/persistency/issues/182"
             )
         assert defaults_file is not None
         assert results.return_code == ResultCode.SUCCESS
