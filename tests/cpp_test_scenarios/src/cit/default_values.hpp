@@ -10,10 +10,8 @@
  *
  * SPDX-License-Identifier: Apache-2.0
  ********************************************************************************/
+#pragma once
 
-#include "cit/cit.hpp"
-#include "cit/default_values.hpp"
+#include "scenario.hpp"
 
-ScenarioGroup::Ptr cit_scenario_group() {
-    return ScenarioGroup::Ptr{new ScenarioGroupImpl{"cit", {}, {default_values_group()}}};
-}
+ScenarioGroup::Ptr default_values_group();
