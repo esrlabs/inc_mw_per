@@ -182,7 +182,7 @@ impl KvsDeserialize for Example {
 fn main() -> Result<(), ErrorCode> {
     // Temporary directory.
     let dir = tempdir()?;
-    let dir_string = dir.path().to_string_lossy().to_string();
+    let dir_path = dir.path().to_path_buf();
 
     // Create initial example object.
     let object = Example {
@@ -219,7 +219,9 @@ fn main() -> Result<(), ErrorCode> {
     let kvs = KvsBuilder::new(InstanceId(0))
         .kvs_load(KvsLoad::Ignored)
         .defaults(KvsDefaults::Ignored)
-        .dir(dir_string)
+        .backend(Box::new(
+            JsonBackendBuilder::new().working_dir(dir_path).build(),
+        ))
         .build()?;
 
     // Serialize and set object.
