@@ -3,8 +3,8 @@
 // Common test utilities are placed in `common/mod.rs` on purpose.
 // This is to ensure file is not improperly detected as empty test file.
 
-use rust_kvs::kvs_value::KvsValue;
 use core::iter::zip;
+use rust_kvs::kvs_value::KvsValue;
 
 /// Compare `KvsValue` objects.
 ///
