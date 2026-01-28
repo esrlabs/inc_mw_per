@@ -36,7 +36,7 @@ jobs:
       - name: Generate Ferrocene coverage reports
         run: |
           set -euo pipefail
-          bazel run //:rust_coverage -- --min-line-coverage 75
+          bazel run //:rust_coverage -- --min-line-coverage 90
 
       - name: Locate coverage artifacts
         run: |
