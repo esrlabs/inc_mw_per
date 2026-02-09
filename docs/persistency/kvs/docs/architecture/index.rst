@@ -67,7 +67,7 @@ The components are designed to cover the expectations from the feature architect
    :status: invalid
    :belongs_to: comp__persistency_kvs
    :implements:
-   :fulfils: comp__persistency_kvs
+   :fulfils: comp_req__persistency__key_naming_v2
 
    .. needarch::
       :scale: 50
@@ -84,7 +84,7 @@ Dynamic Architecture
    :safety: ASIL_B
    :status: invalid
    :belongs_to: comp__persistency_kvs   
-   :fulfils: comp__persistency_kvs
+   :fulfils: comp_req__persistency__key_naming_v2
 
    put here a sequence diagram
 
@@ -111,7 +111,7 @@ Lower Level Components
    :security: YES
    :implements:
    :belongs_to: comp__persistency_kvs
-   :fulfils: comp__persistency_kvs
+   :fulfils: comp_req__persistency__key_naming_v2
 
    no architecture but detailed design
 
