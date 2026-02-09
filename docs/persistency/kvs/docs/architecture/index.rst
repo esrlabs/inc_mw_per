@@ -65,9 +65,9 @@ The components are designed to cover the expectations from the feature architect
    :security: YES
    :safety: ASIL_B
    :status: invalid
+   :belongs_to: comp__persistency_kvs
    :implements:
-   :fulfils:
-   :includes: comp_arc_sta__persistency__2_v2
+   :fulfils: feat__persistency
 
    .. needarch::
       :scale: 50
@@ -83,7 +83,8 @@ Dynamic Architecture
    :security: YES
    :safety: ASIL_B
    :status: invalid
-   :fulfils:
+   :belongs_to: comp__persistency_kvs   
+   :fulfils: feat__persistency
 
    put here a sequence diagram
 
@@ -109,6 +110,8 @@ Lower Level Components
    :safety: ASIL_B
    :security: YES
    :implements:
+   :belongs_to: comp__persistency_kvs
+   :fulfils: comp_arc_sta__persistency__static_view_v2
 
    no architecture but detailed design
 
