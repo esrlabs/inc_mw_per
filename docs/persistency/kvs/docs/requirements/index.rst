@@ -41,6 +41,7 @@ Requirements
    :satisfies: feat_req__persistency__support_datatype_keys
    :status: valid
    :belongs_to: comp__persistency_kvs
+   
    The component shall encode each key as valid UTF-8.
 
 .. comp_req:: Key Uniqueness
@@ -73,6 +74,7 @@ Requirements
    :satisfies: feat_req__persistency__support_datatype_value
    :status: valid
    :belongs_to: comp__persistency_kvs
+   
    The component shall accept only values of the following data types: Number,
    String, Null, Array[Value], or Dictionary{Key:Value}.
 
