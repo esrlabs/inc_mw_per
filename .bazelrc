@@ -84,3 +84,9 @@ test:ferrocene-coverage --run_under=@score_tooling//coverage:llvm_profile_wrappe
 # Import local user workspace file, if exists
 # -------------------------------------------------------------------------------
 try-import %workspace%/user.bazelrc
+
+
+# Coverage configuration for C++
+coverage --features=coverage
+coverage --combined_report=lcov
+coverage --cache_test_results=no
