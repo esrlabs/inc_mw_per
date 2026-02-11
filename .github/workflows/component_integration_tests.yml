@@ -59,7 +59,7 @@ jobs:
 
       - name: Build Rust test scenarios with Bazel
         run: |
-          bazel build //tests/test_scenarios/rust:test_scenarios
+          bazel build --config=per-x86_64-linux //tests/test_scenarios/rust:test_scenarios
 
       - name: Set up Python 3
         uses: actions/setup-python@v5
@@ -79,7 +79,7 @@ jobs:
 
       - name: Run Python tests with bazel
         run: |
-          bazel test //tests/test_cases:cit
+          bazel test --config=per-x86_64-linux //tests/test_cases:cit
 
       - name: Prepare test reports
         if: always()
