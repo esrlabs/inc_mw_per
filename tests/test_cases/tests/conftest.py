@@ -84,15 +84,15 @@ def pytest_sessionstart(session):
 
             # Build Rust test scenarios.
             logger.info("Building Rust test scenarios executable...")
-            cargo_tools = BazelTools(option_prefix="rust", build_timeout=build_timeout)
+            rust_build_tools = BazelTools(option_prefix="rust", build_timeout=build_timeout, config="per-x86_64-linux")
             rust_target_name = session.config.getoption("--rust-target-name")
-            cargo_tools.build(rust_target_name)
+            rust_build_tools.build(rust_target_name)
 
             # Build C++ test scenarios.
             logger.info("Building C++ test scenarios executable...")
-            bazel_tools = BazelTools(option_prefix="cpp", build_timeout=build_timeout)
+            cpp_build_tools = BazelTools(option_prefix="cpp", build_timeout=build_timeout, config="per-x86_64-linux")
             cpp_target_name = session.config.getoption("--cpp-target-name")
-            bazel_tools.build(cpp_target_name, "--config=per-x86_64-linux")
+            cpp_build_tools.build(cpp_target_name)
 
     except Exception as e:
         pytest.exit(str(e), returncode=1)
