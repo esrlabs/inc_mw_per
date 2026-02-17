@@ -12,7 +12,7 @@
 # *******************************************************************************
 module(
     name = "score_persistency",
-    version = "0.2.2",
+    version = "0.0.0",
     compatibility_level = 0,
 )
 
@@ -55,19 +55,6 @@ bazel_dep(name = "rules_cc", version = "0.1.2")
 bazel_dep(name = "score_bazel_cpp_toolchains", version = "0.2.2", dev_dependency = True)
 bazel_dep(name = "score_toolchains_rust", version = "0.7.0", dev_dependency = True)
 
-# score qnx (qcc) toolchain.
-bazel_dep(name = "score_toolchains_qnx", version = "0.0.5", dev_dependency = True)
-
-toolchains_qnx = use_extension("@score_toolchains_qnx//:extensions.bzl", "toolchains_qnx", dev_dependency = True)
-toolchains_qnx.sdp(
-    sha256 = "f2e0cb21c6baddbcb65f6a70610ce498e7685de8ea2e0f1648f01b327f6bac63",
-    strip_prefix = "installation",
-    url = "https://www.qnx.com/download/download/79858/installation.tgz",
-)
-use_repo(toolchains_qnx, "toolchains_qnx_sdp")
-use_repo(toolchains_qnx, "toolchains_qnx_qcc")
-use_repo(toolchains_qnx, "toolchains_qnx_ifs")
-
 ## Bazel registry
 # Module dependencies
 bazel_dep(name = "googletest", version = "1.17.0.bcr.1")
@@ -77,12 +64,12 @@ bazel_dep(name = "google_benchmark", version = "1.9.4", dev_dependency = True)
 bazel_dep(name = "platforms", version = "1.0.0")
 
 ## S-CORE bazel registry
-bazel_dep(name = "score_baselibs", version = "0.1.2")
+bazel_dep(name = "score_baselibs", version = "0.2.4")
 bazel_dep(name = "score_bazel_platforms", version = "0.0.4")
 
 bazel_dep(name = "score_docs_as_code", version = "3.0.0", dev_dependency = True)
 bazel_dep(name = "score_platform", version = "0.5.3", dev_dependency = True)
-bazel_dep(name = "score_process", version = "1.4.0", dev_dependency = True)
+bazel_dep(name = "score_process", version = "1.4.3", dev_dependency = True)
 
 bazel_dep(name = "score_python_basics", version = "0.3.4")
 bazel_dep(name = "score_tooling", version = "1.1.0")
@@ -101,14 +88,6 @@ git_override(
     remote = "https://github.com/eclipse-score/testing_tools.git",
 )
 
-# ToDo: `-`version needed still because of indirect dependency
-bazel_dep(name = "score-baselibs", version = "", dev_dependency = True)
-git_override(
-    module_name = "score-baselibs",
-    commit = "06a27a163a2aa787e1b99f6b04feb00b413b3355",
-    remote = "https://github.com/eclipse-score/baselibs.git",
-)
-
 bazel_dep(name = "custom_qemu", version = "1.0.0", dev_dependency = True)
 archive_override(
     module_name = "custom_qemu",
@@ -118,6 +97,18 @@ archive_override(
         "https://github.com/qorix-group/custom-qemu/releases/download/1.0.0/custom_qemu.tar.gz",
     ],
 )
+
+# needed for ITF
+bazel_dep(name = "score_toolchains_qnx", version = "0.0.5", dev_dependency = True)
+
+toolchains_qnx = use_extension("@score_toolchains_qnx//:extensions.bzl", "toolchains_qnx", dev_dependency = True)
+toolchains_qnx.sdp(
+    sha256 = "f2e0cb21c6baddbcb65f6a70610ce498e7685de8ea2e0f1648f01b327f6bac63",
+    strip_prefix = "installation",
+    url = "https://www.qnx.com/download/download/79858/installation.tgz",
+)
+use_repo(toolchains_qnx, "toolchains_qnx_sdp")
+use_repo(toolchains_qnx, "toolchains_qnx_ifs")
 
 gcc = use_extension("@score_bazel_cpp_toolchains//extensions:gcc.bzl", "gcc", dev_dependency = True)
 gcc.toolchain(
