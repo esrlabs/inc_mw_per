@@ -511,5 +511,5 @@ Environmental Requirements
 none
 
 
-.. needextend:: docname is not None and "persistency/kvs/requirements" in docname
+.. needextend:: c.this_doc() and docname is not None
    :+tags: kvs
