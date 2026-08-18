@@ -12,7 +12,8 @@
 # *******************************************************************************
 
 load("@score_docs_as_code//:docs.bzl", "docs")
-load("@score_tooling//:defs.bzl", "cli_helper", "copyright_checker", "dash_license_checker", "rust_coverage_report", "setup_starpls", "use_format_targets")
+load("@score_format_checker//:macros.bzl", "use_format_targets")
+load("@score_tooling//:defs.bzl", "cli_helper", "copyright_checker", "dash_license_checker", "rust_coverage_report", "setup_starpls")
 load("//:project_config.bzl", "PROJECT_CONFIG")
 
 # Creates all documentation targets:
@@ -46,13 +47,13 @@ copyright_checker(
     name = "copyright",
     srcs = [
         ".github",
+        "BUILD",
+        "MODULE.bazel",
         "docs",
         "examples",
         "src",
         "tests",
         "tools",
-        "//:BUILD",
-        "//:MODULE.bazel",
     ],
     config = "@score_tooling//cr_checker/resources:config",
     template = "@score_tooling//cr_checker/resources:templates",
