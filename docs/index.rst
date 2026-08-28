@@ -95,6 +95,7 @@ Module / Feature Documentation
    :maxdepth: 1
 
    features/persistency/index
+   module/index
    module/manuals/index
    module/release/release_note
    module/safety_mgt/index
