@@ -14,6 +14,7 @@
 #include "internal/kvs_helper.hpp"
 #include <unistd.h>  // fileno(), fdatasync()
 #include <cstdio>    // std::fopen, std::fwrite, std::fflush, std::fclose
+#include <filesystem>
 #include <fstream>
 #include <iostream>
 #include <sstream>
@@ -472,6 +473,53 @@ score::ResultBlank Kvs::remove_key(const std::string_view key)
     return result;
 }
 
+score::ResultBlank Kvs::remove_all_keys()
+{
+    score::ResultBlank result = score::MakeUnexpected(ErrorCode::UnmappedError);
+    std::unique_lock<std::mutex> lock(kvs_mutex, std::try_to_lock);
+    if (lock.owns_lock())
+    {
+        kvs.clear();
+        result = score::ResultBlank{};
+    }
+    else
+    {
+        result = score::MakeUnexpected(ErrorCode::MutexLockFailed);
+    }
+
+    return result;
+}
+
+/* Drop all in-memory changes by reloading the persisted KVS file */
+score::ResultBlank Kvs::discard_pending_changes()
+{
+    score::ResultBlank result = score::MakeUnexpected(ErrorCode::UnmappedError);
+    std::unique_lock<std::mutex> lock(kvs_mutex, std::try_to_lock);
+    if (lock.owns_lock())
+    {
+        /* Snapshot 0 is the current persisted state: written by flush(), read by open(). */
+        const score::filesystem::Path kvs_path = filename_prefix.Native() + "_0";
+
+        /* Optional: a KVS opened without an existing file and never flushed discards to empty. */
+        auto data_res = open_json(kvs_path, OpenJsonNeedFile::Optional);
+        if (!data_res)
+        {
+            result = score::MakeUnexpected(static_cast<ErrorCode>(*data_res.error()));
+        }
+        else
+        {
+            kvs = std::move(data_res.value());
+            result = score::ResultBlank{};
+        }
+    }
+    else
+    {
+        result = score::MakeUnexpected(ErrorCode::MutexLockFailed);
+    }
+
+    return result;
+}
+
 /* Helper: write data to a file and ensure it reaches physical storage.*/
 score::ResultBlank Kvs::write_and_sync(const std::string& path, const void* data, std::size_t size)
 {
@@ -810,6 +858,32 @@ score::Result<score::filesystem::Path> Kvs::get_hash_filename(const SnapshotId& 
         result = score::MakeUnexpected(static_cast<ErrorCode>(*fname_exists_res.error()));
     }
     return result;
+}
+
+/* Get the combined on-disk size of the current KVS data and hash files */
+score::Result<size_t> Kvs::get_storage_file_size() const
+{
+    const std::array<score::filesystem::Path, 2> paths{
+        score::filesystem::Path{filename_prefix.Native() + "_0.json"},
+        score::filesystem::Path{filename_prefix.Native() + "_0.hash"}};
+
+    size_t total_size = 0;
+    for (const auto& path : paths)
+    {
+        std::error_code ec;
+        const auto size = std::filesystem::file_size(path.CStr(), ec);
+        if (!ec)
+        {
+            total_size += static_cast<size_t>(size);
+        }
+        else if (ec != std::errc::no_such_file_or_directory)
+        {
+            logger->LogError() << "error: could not determine size of " << path << ": " << ec.message();
+            return score::MakeUnexpected(ErrorCode::PhysicalStorageFailure);
+        }
+    }
+
+    return total_size;
 }
 
 } /* namespace score::mw::per::kvs */
