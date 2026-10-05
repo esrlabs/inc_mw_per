@@ -12,7 +12,8 @@
 # *******************************************************************************
 load("@pip_score_venv_test//:requirements.bzl", "all_requirements")
 load("@rules_python//python:pip.bzl", "compile_pip_requirements")
-load("@score_tooling//python_basics:defs.bzl", "score_py_pytest", "score_virtualenv")
+load("@score_tooling//python_basics:defs.bzl", "score_virtualenv")
+load("@score_tools//score_pytest:pytest.bzl", "score_pytest")
 
 # In order to update the requirements, change the `requirements.in` file and run:
 # `bazel run //score/kvs/tests/test_cases:requirements.update`.
@@ -23,11 +24,21 @@ compile_pip_requirements(
     name = "requirements",
     srcs = [
         "requirements.txt",
-        "@score_tooling//python_basics:requirements.txt",
+        # Keeps pytest aligned with the version score_pytest ships.
+        "@score_tools//score_pytest:requirements_py312.txt",
     ],
     requirements_txt = "requirements.txt.lock",
     tags = [
         "manual",
+    ],
+)
+
+filegroup(
+    name = "cit_files",
+    srcs = glob(["tests/**/*.py"]) + ["test_properties.py"],
+    visibility = [
+        "//score/kvs/tests:__subpackages__",
+        "//score/kvs_rust/tests:__subpackages__",
     ],
 )
 
@@ -39,7 +50,7 @@ score_virtualenv(
 )
 
 # Tests targets
-score_py_pytest(
+score_pytest(
     name = "cit_cpp",
     size = "small",
     srcs = glob(["tests/**/*.py"]) + ["test_properties.py"],
@@ -61,10 +72,10 @@ score_py_pytest(
     deps = all_requirements,
 )
 
-score_py_pytest(
+score_pytest(
     name = "cit_rust",
     size = "small",
-    srcs = glob(["tests/**/*.py"]) + ["test_properties.py"],
+    srcs = [":cit_files"],
     args = [
         "-m rust",
         "--rust-target-path=$(rootpath //score/kvs/tests/test_scenarios/rust:test_scenarios)",
