@@ -15,6 +15,12 @@ load("@rules_python//python:pip.bzl", "compile_pip_requirements")
 load("@score_tooling//python_basics:defs.bzl", "score_virtualenv")
 load("@score_tools//score_pytest:pytest.bzl", "score_pytest")
 
+# Referenced by //:sbom (python_lockfiles).
+exports_files(
+    ["requirements.txt.lock"],
+    visibility = ["//:__pkg__"],
+)
+
 # In order to update the requirements, change the `requirements.in` file and run:
 # `bazel run //score/kvs/tests/test_cases:requirements.update`.
 # This will update the `requirements.txt` file.
@@ -69,6 +75,7 @@ score_pytest(
     },
     pytest_config = "//:pyproject.toml",
     target_compatible_with = ["@platforms//os:linux"],
+    visibility = ["//:__pkg__"],
     deps = all_requirements,
 )
 
@@ -91,6 +98,7 @@ score_pytest(
     },
     pytest_config = "//:pyproject.toml",
     target_compatible_with = ["@platforms//os:linux"],
+    visibility = ["//:__pkg__"],
     deps = all_requirements,
 )
 
