@@ -10,9 +10,8 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 # *******************************************************************************
-load("@pip_score_venv_test//:requirements.bzl", "all_requirements")
+load("@pip_score_persistency_venv_test//:requirements.bzl", "all_requirements")
 load("@rules_python//python:pip.bzl", "compile_pip_requirements")
-load("@score_tooling//python_basics:defs.bzl", "score_virtualenv")
 load("@score_tools//score_pytest:pytest.bzl", "score_pytest")
 
 # Referenced by //:sbom (python_lockfiles).
@@ -48,28 +47,18 @@ filegroup(
     ],
 )
 
-score_virtualenv(
-    name = "python_tc_venv",
-    reqs = all_requirements,
-    tags = ["manual"],
-    venv_name = ".python_tc_venv",
-)
-
 # Tests targets
 score_pytest(
     name = "cit_cpp",
     size = "small",
-    srcs = glob(["tests/**/*.py"]) + ["test_properties.py"],
+    srcs = [":cit_files"],
     args = [
         "-m cpp",
         "--cpp-target-path=$(rootpath //score/kvs/tests/test_scenarios/cpp:test_scenarios)",
         "--traces=all",
         "--log-cli-level=DEBUG",
     ],
-    data = [
-        ":python_tc_venv",
-        "//score/kvs/tests/test_scenarios/cpp:test_scenarios",
-    ],
+    data = ["//score/kvs/tests/test_scenarios/cpp:test_scenarios"],
     env = {
         "RUST_BACKTRACE": "1",
     },
@@ -89,10 +78,7 @@ score_pytest(
         "--traces=all",
         "--log-cli-level=DEBUG",
     ],
-    data = [
-        ":python_tc_venv",
-        "//score/kvs/tests/test_scenarios/rust:test_scenarios",
-    ],
+    data = ["//score/kvs/tests/test_scenarios/rust:test_scenarios"],
     env = {
         "RUST_BACKTRACE": "1",
     },
