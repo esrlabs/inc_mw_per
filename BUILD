@@ -13,8 +13,9 @@
 
 load("@score_docs_as_code//:docs.bzl", "docs")
 load("@score_sbom//:defs.bzl", "sbom")
-load("@score_tooling//:defs.bzl", "cli_helper", "copyright_checker", "dash_license_checker", "setup_starpls")
+load("@score_tooling//:defs.bzl", "cli_helper", "dash_license_checker", "setup_starpls")
 load("@score_tooling//third_party/format:macros.bzl", "use_format_targets")
+load("@score_tools//cr_checker:cr_checker.bzl", "copyright_checker")
 
 # Creates all documentation targets:
 # - `:docs` for building documentation at build-time
@@ -46,17 +47,7 @@ setup_starpls(
 
 copyright_checker(
     name = "copyright",
-    srcs = [
-        ".github",
-        "BUILD",
-        "MODULE.bazel",
-        "docs",
-        "examples",
-        "score",
-        "tools",
-    ],
-    config = "@score_tooling//cr_checker/resources:config",
-    template = "@score_tooling//cr_checker/resources:templates",
+    exclusion = "//:tools/copyright_exclusions.txt",
     visibility = ["//visibility:public"],
 )
 
