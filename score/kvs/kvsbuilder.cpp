@@ -65,23 +65,19 @@ KvsBuilder& KvsBuilder::snapshot_max_count(std::size_t max_count) noexcept
 
 score::Result<Kvs> KvsBuilder::build() noexcept
 {
-    score::Result<Kvs> result = score::MakeUnexpected(ErrorCode::UnmappedError);
-
     /* Use current directory if empty */
     if ("" == directory_)
     {
         directory_ = "./";
     }
 
-    result = Kvs::open(instance_id_,
-                       snapshot_id_,
-                       need_defaults_,
-                       need_kvs_,
-                       std::move(directory_),
-                       maximum_storage_bytes_,
-                       max_snapshots_);
-
-    return result;
+    return Kvs::open(instance_id_,
+                     snapshot_id_,
+                     need_defaults_,
+                     need_kvs_,
+                     std::move(directory_),
+                     maximum_storage_bytes_,
+                     max_snapshots_);
 }
 
 } /* namespace score::mw::per::kvs */
