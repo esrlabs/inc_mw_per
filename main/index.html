@@ -727,10 +727,11 @@ The integration of the module into a Bazel project is described in <code class="
 <section id="quick-start-building-and-testing">
 <span id="quick-start-building-testing"></span><h1>Quick Start - Building and Testing<a class="headerlink" href="#quick-start-building-and-testing" title="Link to this heading">#</a></h1>
 <p>To build the module:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bazel<span class="w"> </span>build<span class="w"> </span>--config<span class="o">=</span>per-x86_64-linux<span class="w"> </span>--<span class="w"> </span>//score/...
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bazel<span class="w"> </span>build<span class="w"> </span>--config<span class="o">=</span>score-linux-x86_64<span class="w"> </span>--<span class="w"> </span>//score/...
 </pre></div>
 </div>
-<p>Building without an explicit <code class="docutils literal notranslate"><span class="pre">--config</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">per-x86_64-linux</span></code>, <code class="docutils literal notranslate"><span class="pre">per-x86_64-qnx</span></code>, <code class="docutils literal notranslate"><span class="pre">per-arm64-qnx</span></code>) is not supported.</p>
+<p>Building without an explicit <code class="docutils literal notranslate"><span class="pre">--config</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">score-linux-x86_64</span></code>, <code class="docutils literal notranslate"><span class="pre">score-qnx-x86_64</span></code>, <code class="docutils literal notranslate"><span class="pre">score-qnx-aarch64</span></code>) is not supported.
+The old names <code class="docutils literal notranslate"><span class="pre">per-x86_64-linux</span></code>, <code class="docutils literal notranslate"><span class="pre">per-x86_64-qnx</span></code> and <code class="docutils literal notranslate"><span class="pre">per-arm64-qnx</span></code> still work as deprecated aliases.</p>
 <p>To run all tests:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bazel<span class="w"> </span><span class="nb">test</span><span class="w"> </span>//...
 </pre></div>
