@@ -55,23 +55,6 @@ Assumed Platform Safety Requirements
 Assumptions of Use
 ------------------
 
-
-AoU Requirements
-################
-
-.. aou_req:: Persistency Error handling
-   :id: aou_req__persistency__error_handling
-   :reqtype: Functional
-   :security: NO
-   :safety: ASIL_B
-   :status: valid
-   :version: 2
-   :tags: persistency, environment
-
-   The application shall detect and handle the unavailability of the feature persistency.
-   Unavailability covers errors reported by the persistency API as well as persistency calls which do
-   not return or return too late (e.g. caused by blocked or delayed execution of the calling context).
-
 Assumptions on the Environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 | Generally the assumption of the S-CORE platform SEooC is that it is integrated in a safe system, i.e. the POSIX OS it runs on is qualified and also the HW related failures are taken into account by the system integrator, if not otherwise stated in the module's safety concept.
@@ -79,6 +62,7 @@ Assumptions on the Environment
 | - file system access: open, read, write, flush and sync to the storage (``fdatasync``), rename and remove of files. The C++ implementation uses them via ``score::filesystem`` of the baselibs and the C standard library, the Rust implementation via the Rust standard library (``std::fs``);
 | - thread synchronization (mutex);
 | - heap memory allocation.
+| Beyond these OS services the module has no specific AoUs on its environment (OS, C/C++ standard library, HW).
 
 List of AoUs expected from the environment the module runs on:
 
