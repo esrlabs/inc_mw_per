@@ -491,7 +491,7 @@
                   
   <section id="safety-manual">
 <h1>Safety Manual<a class="headerlink" href="#safety-manual" title="Link to this heading">#</a></h1>
-<div class="need_container docutils container" id="SNCB-39bce42c">
+<div class="need_container docutils container" id="SNCB-cc8a442e">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_document table" id="doc__persistency_safety_manual">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -572,67 +572,33 @@
 </section>
 <section id="assumptions-of-use">
 <h2>Assumptions of Use<a class="headerlink" href="#assumptions-of-use" title="Link to this heading">#</a></h2>
-<section id="aou-requirements">
-<h3>AoU Requirements<a class="headerlink" href="#aou-requirements" title="Link to this heading">#</a></h3>
-<div class="need_container docutils container" id="SNCB-0138e438">
-<div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_aou_req table" id="aou_req__persistency__error_handling">
-<tbody>
-<tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
-<div class="line"><span><span class="needs_title"><span class="needs_data">Persistency Error handling</span></span></span></div>
-</div>
-</td>
-<td class="head_center" colspan="2"><div class="needs_head line-block">
-<div class="line"><span><span class="needs_status"><span class="needs_label">status: </span><span class="needs_data">valid</span></span></span></div>
-<div class="line"><span><span class="needs_security"><span class="needs_label">security: </span><span class="needs_data">NO</span></span></span></div>
-<div class="line"><span><span class="needs_safety"><span class="needs_label">safety: </span><span class="needs_data">ASIL_B</span></span></span></div>
-</div>
-</td>
-<td class="head_right" colspan="2"><div class="needs_head_right line-block">
-<div class="line"><span><span class="needs needs_collapse" id="target__show__meta"><span class="needs collapsed"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="8 12 12 16 16 12"></polyline><line x1="12" y1="8" x2="12" y2="16"></line></svg></span><span class="needs visible collapse_is_hidden"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right-circle"><circle cx="12" cy="12" r="10"></circle><polyline points="12 16 16 12 12 8"></polyline><line x1="8" y1="12" x2="16" y2="12"></line></svg></span></span></span></div>
-</div>
-</td>
-</tr>
-<tr class="meta row-even"><td class="meta" colspan="3"><div class="needs_meta_left line-block">
-<div class="line"><span><span><div class="line"><span class="needs_tags"><span class="needs_label">tags: </span><span class="needs_data_container"><span class="needs_data">persistency</span><span class="needs_spacer">, </span><span class="needs_data">environment</span></span></span></div>
-<div class="line"><span class="needs_reqtype"><span class="needs_label">reqtype: </span><span class="needs_data">Functional</span></span></div>
-<div class="line"><span class="needs_version"><span class="needs_label">version: </span>2</span></div>
-</span></span></div>
-<div class="line"><span><div class="line">mitigates: <span class="mitigated_by"><span><a class="reference internal" href="../../features/persistency/safety_analysis/dfa.html#feat_saf_dfa__persistency__execution_blocking" title="aou_req__persistency__error_handling">feat_saf_dfa__persistency__execution_blocking</a>, <a class="reference internal" href="../../features/persistency/safety_analysis/fmea.html#feat_saf_fmea__persistency__corrupted_message" title="aou_req__persistency__error_handling">feat_saf_fmea__persistency__corrupted_message</a>, <a class="reference internal" href="../../features/persistency/safety_analysis/fmea.html#feat_saf_fmea__persistency__err_handl" title="aou_req__persistency__error_handling">feat_saf_fmea__persistency__err_handl</a>, <a class="reference internal" href="../../features/persistency/safety_analysis/fmea.html#feat_saf_fmea__persistency__late_message" title="aou_req__persistency__error_handling">feat_saf_fmea__persistency__late_message</a>, <a class="reference internal" href="../../features/persistency/safety_analysis/fmea.html#feat_saf_fmea__persistency__msg_not_received" title="aou_req__persistency__error_handling">feat_saf_fmea__persistency__msg_not_received</a>, <a class="reference internal" href="../../features/persistency/safety_analysis/fmea.html#feat_saf_fmea__persistency__not_sent" title="aou_req__persistency__error_handling">feat_saf_fmea__persistency__not_sent</a></span></span></div>
-</span></div>
-</div>
-</td>
-<td class="meta" colspan="3"></td>
-</tr>
-<tr class="content row-odd"><td class="content" colspan="6"><p>The application shall detect and handle the unavailability of the feature persistency.
-Unavailability covers errors reported by the persistency API as well as persistency calls which do
-not return or return too late (e.g. caused by blocked or delayed execution of the calling context).</p></td>
-</tr>
-<tr class="footer row-even"><td class="footer_left" colspan="2"><div class="needs_footer_left line-block">
-<div class="line"><span><span class="needs-id"><a class="reference internal" href="#aou_req__persistency__error_handling" title="aou_req__persistency__error_handling">aou_req__persistency__error_handling</a></span></span></div>
-</div>
-</td>
-<td class="footer" colspan="2"><div class="needs_footer line-block">
-<div class="line"><span><span class="needs_type_name"><span class="needs_data">Assumption of Use Requirement</span></span></span></div>
-</div>
-</td>
-<td class="footer_right" colspan="2"></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
 <section id="assumptions-on-the-environment">
-<h4>Assumptions on the Environment<a class="headerlink" href="#assumptions-on-the-environment" title="Link to this heading">#</a></h4>
+<h3>Assumptions on the Environment<a class="headerlink" href="#assumptions-on-the-environment" title="Link to this heading">#</a></h3>
 <div class="line-block">
 <div class="line">Generally the assumption of the S-CORE platform SEooC is that it is integrated in a safe system, i.e. the POSIX OS it runs on is qualified and also the HW related failures are taken into account by the system integrator, if not otherwise stated in the module’s safety concept.</div>
 <div class="line">The module expects the following OS services to be safe:</div>
 <div class="line">- file system access: open, read, write, flush and sync to the storage (<code class="docutils literal notranslate"><span class="pre">fdatasync</span></code>), rename and remove of files. The C++ implementation uses them via <code class="docutils literal notranslate"><span class="pre">score::filesystem</span></code> of the baselibs and the C standard library, the Rust implementation via the Rust standard library (<code class="docutils literal notranslate"><span class="pre">std::fs</span></code>);</div>
 <div class="line">- thread synchronization (mutex);</div>
 <div class="line">- heap memory allocation.</div>
+<div class="line">Beyond these OS services the module has no specific AoUs on its environment (OS, C/C++ standard library, HW).</div>
 </div>
 <p>List of AoUs expected from the environment the module runs on:</p>
-<div class="needstable_wrapper docutils container" id="needtable-module/manuals/safety_manual-1">
-<div class="pst-scrollable-table-container"><table class="NEEDS_TABLE table" id="needtable-module/manuals/safety_manual-1-table_node">
+<p class="needs_filter_warning" id="needtable-module/manuals/safety_manual-1">No needs passed the filters</p>
+</section>
+<section id="assumptions-on-the-user">
+<h3>Assumptions on the User<a class="headerlink" href="#assumptions-on-the-user" title="Link to this heading">#</a></h3>
+<div class="line-block">
+<div class="line">As there is no assumption on which specific OS and HW is used, the integration testing of the stakeholder and feature requirements is expected to be performed by the user of the platform SEooC. Tests covering all stakeholder and feature requirements performed on a reference platform (tbd link to reference platform specification), reviewed and passed are included in the platform SEooC safety package.</div>
+<div class="line">Additionally the components of the platform may have additional specific assumptions how they are used. These are part of every module documentation: <a class="reference internal" href="../../index.html#persistency-module-documentation"><span class="std std-ref">Persistency Documentation</span></a>. Assumptions from components to their users can be fulfilled in two ways:</div>
+<div class="line">1. There are assumption which need to be fulfilled by all SW components, e.g. “every user of an IPC mechanism needs to make sure that he provides correct data (including appropriate ASIL level)” - in this case the AoU is marked as “platform”.</div>
+<div class="line">2. There are assumption which can be fulfilled by a safety mechanism realized by some other S-CORE platform component and are therefore not relevant for an user who uses the whole platform. But those are relevant if you chose to use the module SEooC stand-alone - in this case the AoU is marked as “module”. An example would be the “JSON read” which requires “The user shall provide a string as input which is not corrupted due to HW or QM SW errors.” - which is covered when using together with safe S-CORE platform persistency feature.</div>
+</div>
+<p>List of AoUs on the user of the platform features or the module of this safety manual:</p>
+<p>Note: The platform safety manual collects all platform wide AoUs (to be fulfilled by the user for any feature).
+This module safety manual collects all AoUs specific to the feature Persistency and its realizing component.
+For the feature Persistency the platform safety manual and this module safety manual have to be considered.</p>
+<div class="needstable_wrapper docutils container" id="needtable-module/manuals/safety_manual-2">
+<div class="pst-scrollable-table-container"><table class="NEEDS_TABLE table" id="needtable-module/manuals/safety_manual-2-table_node">
 <colgroup>
 <col style="width: 33.3%" />
 <col style="width: 33.3%" />
@@ -646,28 +612,13 @@ not return or return too late (e.g. caused by blocked or delayed execution of th
 </thead>
 <tbody>
 <tr class="need row-even"><td class="needs_title"><p>Persistency Error handling</p></td>
-<td class="needs_id"><p><a class="reference internal" href="#aou_req__persistency__error_handling">aou_req__persistency__error_handling</a></p></td>
+<td class="needs_id"><p><a class="reference internal" href="../../features/persistency/safety_analysis/aou_requirements.html#aou_req__persistency__error_handling">aou_req__persistency__error_handling</a></p></td>
 <td class="needs_status"><p>valid</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
-</section>
-<section id="assumptions-on-the-user">
-<h4>Assumptions on the User<a class="headerlink" href="#assumptions-on-the-user" title="Link to this heading">#</a></h4>
-<div class="line-block">
-<div class="line">As there is no assumption on which specific OS and HW is used, the integration testing of the stakeholder and feature requirements is expected to be performed by the user of the platform SEooC. Tests covering all stakeholder and feature requirements performed on a reference platform (tbd link to reference platform specification), reviewed and passed are included in the platform SEooC safety package.</div>
-<div class="line">Additionally the components of the platform may have additional specific assumptions how they are used. These are part of every module documentation: <a class="reference internal" href="../../index.html#persistency-module-documentation"><span class="std std-ref">Persistency Documentation</span></a>. Assumptions from components to their users can be fulfilled in two ways:</div>
-<div class="line">1. There are assumption which need to be fulfilled by all SW components, e.g. “every user of an IPC mechanism needs to make sure that he provides correct data (including appropriate ASIL level)” - in this case the AoU is marked as “platform”.</div>
-<div class="line">2. There are assumption which can be fulfilled by a safety mechanism realized by some other S-CORE platform component and are therefore not relevant for an user who uses the whole platform. But those are relevant if you chose to use the module SEooC stand-alone - in this case the AoU is marked as “module”. An example would be the “JSON read” which requires “The user shall provide a string as input which is not corrupted due to HW or QM SW errors.” - which is covered when using together with safe S-CORE platform persistency feature.</div>
-</div>
-<p>List of AoUs on the user of the platform features or the module of this safety manual:</p>
-<p>Note: The platform safety manual collects all platform wide AoUs (to be fulfilled by the user for any feature).
-This module safety manual collects all AoUs specific to the feature Persistency and its realizing component.
-For the feature Persistency the platform safety manual and this module safety manual have to be considered.</p>
-<p class="needs_filter_warning" id="needtable-module/manuals/safety_manual-2">No needs passed the filters</p>
-</section>
 </section>
 </section>
 <section id="safety-concept-of-the-seooc">
@@ -676,7 +627,7 @@ For the feature Persistency the platform safety manual and this module safety ma
 <div class="line">Persistency is developed fully deterministic. Detected errors are reported to the application, which has to handle them.</div>
 <div class="line">Persistency is executed in the execution context of the calling application. Failures which can not be detected by persistency</div>
 <div class="line">itself, like blocked or delayed execution, result in persistency not being available (no or too late response). The application</div>
-<div class="line">has to handle this unavailability (see <a class="reference internal" href="#aou_req__persistency__error_handling" title="aou_req__persistency__error_handling"><em class="xref need">Persistency Error handling (aou_req__persistency__error_handling)</em></a>). Keeping persistency available is therefore</div>
+<div class="line">has to handle this unavailability (see <a class="reference internal" href="../../features/persistency/safety_analysis/aou_requirements.html#aou_req__persistency__error_handling" title="aou_req__persistency__error_handling"><em class="xref need">Persistency Error handling (aou_req__persistency__error_handling)</em></a>). Keeping persistency available is therefore</div>
 <div class="line">not a safety relevant assumption on the application.</div>
 <div class="line">The integrity of the persisted data is checked when it is loaded: the data file is only used if its Adler-32 checksum</div>
 <div class="line">matches the stored checksum file, otherwise an error is reported and the data is not provided (see <a class="external_link reference external" href="https://eclipse-score.github.io/score/main/features/persistency/requirements/index.html#feat_req__persistency__integrity_check">feat_req__persistency__integrity_check</a>).</div>
@@ -753,11 +704,8 @@ For the feature Persistency the platform safety manual and this module safety ma
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-scope">Introduction/Scope</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumed-platform-safety-requirements">Assumed Platform Safety Requirements</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-of-use">Assumptions of Use</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aou-requirements">AoU Requirements</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-on-the-environment">Assumptions on the Environment</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-on-the-user">Assumptions on the User</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-on-the-environment">Assumptions on the Environment</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#assumptions-on-the-user">Assumptions on the User</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#safety-concept-of-the-seooc">Safety concept of the SEooC</a></li>

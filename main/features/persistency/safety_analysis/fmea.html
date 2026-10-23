@@ -74,7 +74,7 @@
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="DFA (Dependent Failure Analysis)" href="dfa.html" />
-    <link rel="prev" title="Persistency Architecture Inspection" href="../architecture/chklst_arc_inspection.html" />
+    <link rel="prev" title="Persistency Assumptions of Use" href="aou_requirements.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="0.0.0" />
@@ -408,6 +408,7 @@
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../architecture/index.html">Persistency KVS Architecture</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../architecture/chklst_arc_inspection.html">Persistency Architecture Inspection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aou_requirements.html">Persistency Assumptions of Use</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">FMEA (Failure Modes and Effects Analysis)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dfa.html">DFA (Dependent Failure Analysis)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../safety_planning/index.html">Feature Safety Work Products List</a></li>
@@ -475,7 +476,7 @@
                   
   <section id="fmea-failure-modes-and-effects-analysis">
 <h1>FMEA (Failure Modes and Effects Analysis)<a class="headerlink" href="#fmea-failure-modes-and-effects-analysis" title="Link to this heading">#</a></h1>
-<div class="need_container docutils container" id="SNCB-7f227dcb">
+<div class="need_container docutils container" id="SNCB-378a29cd">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_document table" id="doc__persistency_fmea">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -621,7 +622,7 @@ following tables. For all applicable failure initiators, the FMEA has to be perf
 <section id="fmea">
 <h2>FMEA<a class="headerlink" href="#fmea" title="Link to this heading">#</a></h2>
 <p>For all identified applicable failure initiators, the FMEA is performed in the following section.</p>
-<div class="need_container docutils container" id="SNCB-2d0eaf4d">
+<div class="need_container docutils container" id="SNCB-e400b98e">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_feat_saf_fmea table" id="feat_saf_fmea__persistency__msg_not_received">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -645,7 +646,7 @@ following tables. For all applicable failure initiators, the FMEA has to be perf
 <div class="line"><span class="needs_sufficient"><span class="needs_label">sufficient: </span><span class="needs_data">yes</span></span></div>
 <div class="line"><span class="needs_version"><span class="needs_label">version: </span>1</span></div>
 </span></span></div>
-<div class="line"><span><div class="line">mitigated_by: <span class="mitigated_by"><span><a class="reference internal" href="../../../module/manuals/safety_manual.html#aou_req__persistency__error_handling" title="feat_saf_fmea__persistency__msg_not_received">aou_req__persistency__error_handling</a></span></span></div>
+<div class="line"><span><div class="line">mitigated_by: <span class="mitigated_by"><span><a class="reference internal" href="aou_requirements.html#aou_req__persistency__error_handling" title="feat_saf_fmea__persistency__msg_not_received">aou_req__persistency__error_handling</a></span></span></div>
 <div class="line">violates: <span class="violates"><span><a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__check_key_default" title="feat_saf_fmea__persistency__msg_not_received">feat_arc_dyn__persistency__check_key_default</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__delete_key" title="feat_saf_fmea__persistency__msg_not_received">feat_arc_dyn__persistency__delete_key</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__flush" title="feat_saf_fmea__persistency__msg_not_received">feat_arc_dyn__persistency__flush</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__read_from_storage" title="feat_saf_fmea__persistency__msg_not_received">feat_arc_dyn__persistency__read_from_storage</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__read_key" title="feat_saf_fmea__persistency__msg_not_received">feat_arc_dyn__persistency__read_key</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__snapshot_restore" title="feat_saf_fmea__persistency__msg_not_received">feat_arc_dyn__persistency__snapshot_restore</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__write_key" title="feat_saf_fmea__persistency__msg_not_received">feat_arc_dyn__persistency__write_key</a></span></span></div>
 </span></div>
 </div>
@@ -669,7 +670,7 @@ Failure handling is addressed to the application by the aou_req__persistency__er
 </table>
 </div>
 </div>
-<div class="need_container docutils container" id="SNCB-bb6839d3">
+<div class="need_container docutils container" id="SNCB-f064558a">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_feat_saf_fmea table" id="feat_saf_fmea__persistency__late_message">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -693,7 +694,7 @@ Failure handling is addressed to the application by the aou_req__persistency__er
 <div class="line"><span class="needs_sufficient"><span class="needs_label">sufficient: </span><span class="needs_data">yes</span></span></div>
 <div class="line"><span class="needs_version"><span class="needs_label">version: </span>1</span></div>
 </span></span></div>
-<div class="line"><span><div class="line">mitigated_by: <span class="mitigated_by"><span><a class="reference internal" href="../../../module/manuals/safety_manual.html#aou_req__persistency__error_handling" title="feat_saf_fmea__persistency__late_message">aou_req__persistency__error_handling</a></span></span></div>
+<div class="line"><span><div class="line">mitigated_by: <span class="mitigated_by"><span><a class="reference internal" href="aou_requirements.html#aou_req__persistency__error_handling" title="feat_saf_fmea__persistency__late_message">aou_req__persistency__error_handling</a></span></span></div>
 <div class="line">violates: <span class="violates"><span><a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__check_key_default" title="feat_saf_fmea__persistency__late_message">feat_arc_dyn__persistency__check_key_default</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__delete_key" title="feat_saf_fmea__persistency__late_message">feat_arc_dyn__persistency__delete_key</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__flush" title="feat_saf_fmea__persistency__late_message">feat_arc_dyn__persistency__flush</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__read_from_storage" title="feat_saf_fmea__persistency__late_message">feat_arc_dyn__persistency__read_from_storage</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__read_key" title="feat_saf_fmea__persistency__late_message">feat_arc_dyn__persistency__read_key</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__snapshot_restore" title="feat_saf_fmea__persistency__late_message">feat_arc_dyn__persistency__snapshot_restore</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__write_key" title="feat_saf_fmea__persistency__late_message">feat_arc_dyn__persistency__write_key</a></span></span></div>
 </span></div>
 </div>
@@ -716,7 +717,7 @@ Failure handling is addressed to the application by the aou_req__persistency__er
 </table>
 </div>
 </div>
-<div class="need_container docutils container" id="SNCB-5c3a6665">
+<div class="need_container docutils container" id="SNCB-47b7e73b">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_feat_saf_fmea table" id="feat_saf_fmea__persistency__corrupted_message">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -740,7 +741,7 @@ Failure handling is addressed to the application by the aou_req__persistency__er
 <div class="line"><span class="needs_sufficient"><span class="needs_label">sufficient: </span><span class="needs_data">yes</span></span></div>
 <div class="line"><span class="needs_version"><span class="needs_label">version: </span>1</span></div>
 </span></span></div>
-<div class="line"><span><div class="line">mitigated_by: <span class="mitigated_by"><span><a class="reference internal" href="../../../module/manuals/safety_manual.html#aou_req__persistency__error_handling" title="feat_saf_fmea__persistency__corrupted_message">aou_req__persistency__error_handling</a></span></span></div>
+<div class="line"><span><div class="line">mitigated_by: <span class="mitigated_by"><span><a class="reference internal" href="aou_requirements.html#aou_req__persistency__error_handling" title="feat_saf_fmea__persistency__corrupted_message">aou_req__persistency__error_handling</a></span></span></div>
 <div class="line">violates: <span class="violates"><span><a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__check_key_default" title="feat_saf_fmea__persistency__corrupted_message">feat_arc_dyn__persistency__check_key_default</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__delete_key" title="feat_saf_fmea__persistency__corrupted_message">feat_arc_dyn__persistency__delete_key</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__flush" title="feat_saf_fmea__persistency__corrupted_message">feat_arc_dyn__persistency__flush</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__read_from_storage" title="feat_saf_fmea__persistency__corrupted_message">feat_arc_dyn__persistency__read_from_storage</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__read_key" title="feat_saf_fmea__persistency__corrupted_message">feat_arc_dyn__persistency__read_key</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__snapshot_restore" title="feat_saf_fmea__persistency__corrupted_message">feat_arc_dyn__persistency__snapshot_restore</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__write_key" title="feat_saf_fmea__persistency__corrupted_message">feat_arc_dyn__persistency__write_key</a></span></span></div>
 </span></div>
 </div>
@@ -763,7 +764,7 @@ Failure handling is addressed to the application by the aou_req__persistency__er
 </table>
 </div>
 </div>
-<div class="need_container docutils container" id="SNCB-1acc6656">
+<div class="need_container docutils container" id="SNCB-3141e970">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_feat_saf_fmea table" id="feat_saf_fmea__persistency__not_sent">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -787,7 +788,7 @@ Failure handling is addressed to the application by the aou_req__persistency__er
 <div class="line"><span class="needs_sufficient"><span class="needs_label">sufficient: </span><span class="needs_data">yes</span></span></div>
 <div class="line"><span class="needs_version"><span class="needs_label">version: </span>1</span></div>
 </span></span></div>
-<div class="line"><span><div class="line">mitigated_by: <span class="mitigated_by"><span><a class="reference internal" href="../../../module/manuals/safety_manual.html#aou_req__persistency__error_handling" title="feat_saf_fmea__persistency__not_sent">aou_req__persistency__error_handling</a></span></span></div>
+<div class="line"><span><div class="line">mitigated_by: <span class="mitigated_by"><span><a class="reference internal" href="aou_requirements.html#aou_req__persistency__error_handling" title="feat_saf_fmea__persistency__not_sent">aou_req__persistency__error_handling</a></span></span></div>
 <div class="line">violates: <span class="violates"><span><a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__check_key_default" title="feat_saf_fmea__persistency__not_sent">feat_arc_dyn__persistency__check_key_default</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__delete_key" title="feat_saf_fmea__persistency__not_sent">feat_arc_dyn__persistency__delete_key</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__flush" title="feat_saf_fmea__persistency__not_sent">feat_arc_dyn__persistency__flush</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__read_from_storage" title="feat_saf_fmea__persistency__not_sent">feat_arc_dyn__persistency__read_from_storage</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__read_key" title="feat_saf_fmea__persistency__not_sent">feat_arc_dyn__persistency__read_key</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__snapshot_restore" title="feat_saf_fmea__persistency__not_sent">feat_arc_dyn__persistency__snapshot_restore</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__write_key" title="feat_saf_fmea__persistency__not_sent">feat_arc_dyn__persistency__write_key</a></span></span></div>
 </span></div>
 </div>
@@ -810,7 +811,7 @@ Failure handling is addressed to the application by the aou_req__persistency__er
 </table>
 </div>
 </div>
-<div class="need_container docutils container" id="SNCB-216e73d6">
+<div class="need_container docutils container" id="SNCB-0c68b859">
 <div class="pst-scrollable-table-container"><table class="need needs_grid_complex needs_layout_score needs_style_none needs_type_feat_saf_fmea table" id="feat_saf_fmea__persistency__err_handl">
 <tbody>
 <tr class="head row-odd"><td class="head_left" colspan="2"><div class="needs_head_left line-block">
@@ -834,7 +835,7 @@ Failure handling is addressed to the application by the aou_req__persistency__er
 <div class="line"><span class="needs_sufficient"><span class="needs_label">sufficient: </span><span class="needs_data">yes</span></span></div>
 <div class="line"><span class="needs_version"><span class="needs_label">version: </span>1</span></div>
 </span></span></div>
-<div class="line"><span><div class="line">mitigated_by: <span class="mitigated_by"><span><a class="reference internal" href="../../../module/manuals/safety_manual.html#aou_req__persistency__error_handling" title="feat_saf_fmea__persistency__err_handl">aou_req__persistency__error_handling</a></span></span></div>
+<div class="line"><span><div class="line">mitigated_by: <span class="mitigated_by"><span><a class="reference internal" href="aou_requirements.html#aou_req__persistency__error_handling" title="feat_saf_fmea__persistency__err_handl">aou_req__persistency__error_handling</a></span></span></div>
 <div class="line">violates: <span class="violates"><span><a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__check_key_default" title="feat_saf_fmea__persistency__err_handl">feat_arc_dyn__persistency__check_key_default</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__delete_key" title="feat_saf_fmea__persistency__err_handl">feat_arc_dyn__persistency__delete_key</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__flush" title="feat_saf_fmea__persistency__err_handl">feat_arc_dyn__persistency__flush</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__read_from_storage" title="feat_saf_fmea__persistency__err_handl">feat_arc_dyn__persistency__read_from_storage</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__read_key" title="feat_saf_fmea__persistency__err_handl">feat_arc_dyn__persistency__read_key</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__snapshot_restore" title="feat_saf_fmea__persistency__err_handl">feat_arc_dyn__persistency__snapshot_restore</a>, <a class="reference internal" href="../architecture/index.html#feat_arc_dyn__persistency__write_key" title="feat_saf_fmea__persistency__err_handl">feat_arc_dyn__persistency__write_key</a></span></span></div>
 </span></div>
 </div>
@@ -872,12 +873,12 @@ Failure handling is addressed to the application by the aou_req__persistency__er
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../architecture/chklst_arc_inspection.html"
+       href="aou_requirements.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Persistency Architecture Inspection</p>
+        <p class="prev-next-title">Persistency Assumptions of Use</p>
       </div>
     </a>
     <a class="right-next"
